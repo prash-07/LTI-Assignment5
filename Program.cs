@@ -8,7 +8,7 @@ namespace Assignment5
         static void Main(string[] args)
         {
             Console.WriteLine("First Line");
-
+            Console.WriteLine("Suril was here");
             Console.WriteLine("Enter Amount to be withdrawn :");
             int amount = Convert.ToInt32(Console.ReadLine());
             SavingsAccount a1 = new SavingsAccount(332964553151, 10000, "Bnte@chr",5000);
