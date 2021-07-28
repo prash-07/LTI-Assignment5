@@ -43,14 +43,17 @@ namespace Assignment5
             Console.WriteLine("Bank Name: " + Account.bankName);
         }
 
-        public abstract void Withdraw(int amount);
+        public abstract int Withdraw(int amount);
     }
 
-    class SavingsAccount: Account
+    public class SavingsAccount: Account
     {
         double minimumBalance;
 
+
+
         public double MinimumBalance { get => minimumBalance; set => minimumBalance = value; }
+
 
         public SavingsAccount(double acc_no, int acc_bal, string acc_pass, double min_bal):base(acc_no, acc_bal,acc_pass)
         {
@@ -65,7 +68,12 @@ namespace Assignment5
             }
         }
 
-        public override void Withdraw(int amount)
+        public int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public override int Withdraw(int amount)
         {
             //throw new NotImplementedException();
             try
@@ -84,7 +92,7 @@ namespace Assignment5
             {
                 Console.WriteLine(i.Message);
             }
-
+            return AccountBal;
 
         }
         private void InsufficientFundException(int amount, double accountBal, double minimumBalance)
@@ -127,10 +135,11 @@ namespace Assignment5
             this.OverdraftLimitAmount = overdraft_amt;
         }
 
-        public override void Withdraw(int amount)
+        public override int Withdraw(int amount)
         {
             //throw new NotImplementedException();
             AccountBal = AccountBal - amount;
+            return AccountBal;
         }
 
         public override void DisplayBankDetails()
