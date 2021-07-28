@@ -7,6 +7,7 @@ namespace Assignment5
 
         static void Main(string[] args)
         {
+            Console.WriteLine("Second Line");
 
             Console.WriteLine("Enter Amount to be withdrawn :");
             int amount = Convert.ToInt32(Console.ReadLine());
